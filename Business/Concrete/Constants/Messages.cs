@@ -22,6 +22,26 @@ namespace Business.Concrete.Constants
         public static string ColorsListed = "Renkler listelendi";
         public static string CarDailyPriceInvalid = "Araba ücreti 0 dan büyük bir sayı olmalıdır.";
         public static string BrandNameInvalid = "Marka ismi min 2 karakter olmalıdır.";
+
+        public static string CustomerAdded = "Müşteri eklendi";
+        public static string RentalAdded = "Kiralama oluşturuldu";
+        public static string RentalUpdate = "Kiralama güncellendi";
+        public static string RentalDeleted = "Kiralama silindi";
+
+
+        public static string RentalInvalid = "Araba teslim edilmediği için kiralanamaz";
+        public static string CustomerDeleted = "Müşteri silindi";
+        public static string UserDeleted = "Kullanıcı silindi";
+        public static string CustomerUpdate = "Müşter güncellendi";
+        public static string UserAdded = "Kullanıcı Eklendi.";
+        public static string UserNameInValid = "Kullanıcı ismi geçersiz.";
+        public static string UserMaintenenceTime = "Sistem bakımda olduğundan işleminize devam edilemiyor.";
+        public static string UserListed = "Kullanıcılar Listelendi. ";
+        public static string UserUpdated = "Kullanıcı bilgileri veritabanında güncellendi. ";
+        
+
+
     }
+   
 
 }

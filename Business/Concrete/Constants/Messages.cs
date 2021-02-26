@@ -38,9 +38,8 @@ namespace Business.Concrete.Constants
         public static string UserMaintenenceTime = "Sistem bakımda olduğundan işleminize devam edilemiyor.";
         public static string UserListed = "Kullanıcılar Listelendi. ";
         public static string UserUpdated = "Kullanıcı bilgileri veritabanında güncellendi. ";
-        
 
-
+        public static string CarsListed { get; internal set; }
     }
    
 

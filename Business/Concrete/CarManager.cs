@@ -19,9 +19,10 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+
         public IResult Add(Car car)
         {
-            if (car.DailyPrice > 0)
+            if (car.DailyPrice > 0 && car.Descriptions.Length > 2)
             {
                 _carDal.Add(car);
                 return new SuccessResult(Messages.CarAdded);
@@ -30,7 +31,6 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.CarDailyPriceInvalid);
             }
-
         }
 
         public IResult Delete(Car car)
@@ -41,38 +41,36 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarListed);
+            // if (DateTime.Now.Hour == 10)
+            //{
+            //    return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
+            //}
+            return new SuccessDataResult<List<Car>> ( _carDal.GetAll(),Messages.CarListed);
         }
 
         public IDataResult<List<Car>> GetAllByBrandId(int id)
-
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(br => br.BrandId == id));
+            throw new NotImplementedException();
         }
 
         public IDataResult<List<Car>> GetAllByColorId(int id)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(co => co.ColorId == id));
+            throw new NotImplementedException();
+        }
+
+        public object GetById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
+            throw new NotImplementedException();
         }
 
         public IResult Update(Car car)
         {
-            if (car.DailyPrice > 0)
-            {
-                _carDal.Update(car);
-
-            }
-            else
-            {
-                Console.WriteLine("Günlük fiyat 0'dan büyük olmalıdır.");
-            }
-            return new SuccessResult(Messages.CarUpdate);
+            throw new NotImplementedException();
         }
     }
 }

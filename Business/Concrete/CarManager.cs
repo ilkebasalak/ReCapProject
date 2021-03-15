@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Acpects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
@@ -20,8 +22,12 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+       [ValidationAspect(typeof(CarManager))]
+
         public IResult Add(Car car)
+
         {
+
             if (car.DailyPrice > 0 && car.Descriptions.Length > 2)
             {
                 _carDal.Add(car);

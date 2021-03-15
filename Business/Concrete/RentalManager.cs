@@ -22,8 +22,8 @@ namespace Business.Concrete
         {
             var result = _rentalDal.GetAll(p => p.CarId == rental.CarId); throw new NotImplementedException();
 
-            
-             foreach  (var r in result)
+
+            foreach (var r in result)
 
             {
                 if (r.ReturnDate == null)

@@ -1,14 +1,14 @@
 ﻿using Business.Abstract;
-using Business.Concrete.Constants;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Business.Concrete
 {
+
     public class UserManager : IUserService
     {
         IUserDal _userDal;
@@ -18,16 +18,23 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public IResult Add(User user)
+        public IDataResult<User> GetById(int userId)
         {
-            _userDal.Update(user);
-            return new SuccessResult(Messages.UserUpdated);
-
+            return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == userId));
         }
 
-        public IResult Delete(User user, int userId)
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
-            return new SuccessDataResult<List<User>>( Messages.UserDeleted);
+            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
+        }
+
+       
+        
+
+        public IResult Delete(User user)
+        {
+            _userDal.Delete(user);
+            return new SuccessResult();
         }
 
         public IDataResult<List<User>> GetAll()
@@ -35,15 +42,31 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll());
         }
 
-        public IDataResult<List<User>> GetUsersByUserId(int userId)
+        public IDataResult<User> GetByMail(string email)
         {
-
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(u => u.UserId == userId));
+            return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
         }
 
         public IResult Update(User user)
         {
-            return new SuccessDataResult<List<User>>( Messages.UserUpdated);
+            _userDal.Update(user);
+            return new SuccessResult();
+        }
+
+        public IResult Add(User user)
+        {
+            _userDal.Add(user);
+            return new SuccessResult();
+        }
+
+        public object Update(Entities.Concrete.User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Add(Entities.Concrete.User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Concrete.Constants
 {
-   public static class Messages
+    public static class Messages
     {
         public static string CarAdded = "Ürün eklendi.";
         public static string BrandAdded = "Brand eklendi.";
@@ -38,9 +40,16 @@ namespace Business.Concrete.Constants
         public static string UserMaintenenceTime = "Sistem bakımda olduğundan işleminize devam edilemiyor.";
         public static string UserListed = "Kullanıcılar Listelendi. ";
         public static string UserUpdated = "Kullanıcı bilgileri veritabanında güncellendi. ";
+        public static string AuthorizationDenied = "Yetkiniz Yok.";
+        internal static string UserRegistered = "Kayıt oldu";
 
-        public static string CarsListed { get; internal set; }
+       
+        public static string UserNotFound = "Kayıt bulunamadı";
+        public static string PasswordError = "Şifre hatalı";
+        public static string UserAlreadyExists = "Kullanıcı zaten var.";
+        public static string AccessTokenCreated = "Token oluşturuldu";
+
+        public static string ErrorGetByUserMail = "Sistemde Bu Kullanıcıya Ait Mail Adresi Bulunamamaktadır.";
+        public static string SuccessGetByUserMail = "Kullanıcının Mail Adresi Başarıyla Sorgulandı.";
     }
-   
-
 }

@@ -1,9 +1,9 @@
-# ReCapProject
+#  Car Rental Company - ReCapProject
 
 
 Bu proje Çok Katmanlı Mimari temel alınarak geliştirilmiştir. Projede SOLID yazılım prensipleri benimsenmiştir
 
-<Tecnologies>
+#Tecnologies
 
 
 

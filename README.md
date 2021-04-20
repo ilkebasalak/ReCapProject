@@ -5,8 +5,8 @@ Bu proje Çok Katmanlı Mimari temel alınarak geliştirilmiştir. Projede SOLID
 
 Tecnologies
 
-Asp.Net Core for Restful api
-MsSql
-EntityFramework Core
-Autofac
-FluentValidation
+.Asp.Net Core for Restful api
+.MsSql
+.EntityFramework Core
+.Autofac
+.FluentValidation

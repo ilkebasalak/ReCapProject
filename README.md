@@ -1,4 +1,4 @@
-#  Car Rental Company - ReCapProject- Backend
+#  Car Rental Company - RentCarProject- Backend
 
 
 Bu proje Çok Katmanlı Mimari temel alınarak geliştirilmiştir. Projede SOLID yazılım prensipleri benimsenmiştir
